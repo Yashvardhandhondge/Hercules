@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
+/* KYB Hercules Design System - Private. Scientific. Judgment-Free. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand palette: deep blue / charcoal / bronze */
+  --kyb-navy: #0f172a;
+  --kyb-navy-light: #1e293b;
+  --kyb-charcoal: #334155;
+  --kyb-slate: #475569;
+  --kyb-bronze: #b8860b;
+  --kyb-bronze-light: #d4a84b;
+  --kyb-bronze-muted: rgba(184, 134, 11, 0.12);
+  --kyb-cream: #f8fafc;
+  --kyb-white: #ffffff;
+  --kyb-border: #e2e8f0;
+  --kyb-text: #0f172a;
+  --kyb-text-muted: #64748b;
+  --kyb-success: #059669;
+  --kyb-trust-bg: #f1f5f9;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-kyb-navy: var(--kyb-navy);
+  --color-kyb-navy-light: var(--kyb-navy-light);
+  --color-kyb-charcoal: var(--kyb-charcoal);
+  --color-kyb-slate: var(--kyb-slate);
+  --color-kyb-bronze: var(--kyb-bronze);
+  --color-kyb-bronze-light: var(--kyb-bronze-light);
+  --color-kyb-cream: var(--kyb-cream);
+  --color-kyb-trust-bg: var(--kyb-trust-bg);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-plus-jakarta);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--kyb-cream);
+  color: var(--kyb-text);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle focus for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--kyb-bronze);
+  outline-offset: 2px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+.font-display {
+  font-family: var(--font-plus-jakarta), system-ui, sans-serif;
 }
