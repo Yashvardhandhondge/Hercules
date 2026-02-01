@@ -28,6 +28,7 @@ export function Footer() {
             <p className="font-display text-lg font-bold">
               KYB <span className="text-[var(--kyb-bronze-light)]">Hercules</span>
             </p>
+            <p className="mt-1 text-xs text-slate-400">Know You Better</p>
             <p className="mt-2 text-sm text-slate-300">
               Private. Scientific. Judgment-free male sexual health guidance.
             </p>

@@ -7,8 +7,11 @@ export default function Home() {
       <section className="relative overflow-hidden bg-[var(--kyb-navy)] px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--kyb-bronze-muted),transparent)]" />
         <div className="relative mx-auto max-w-4xl text-center">
-          <p className="mb-4 text-sm font-medium uppercase tracking-wider text-[var(--kyb-bronze-light)]">
+          <p className="mb-2 text-sm font-medium uppercase tracking-wider text-[var(--kyb-bronze-light)]">
             India&apos;s First Structured Male Sexual Health Platform
+          </p>
+          <p className="mb-4 text-sm text-slate-400">
+            KYB — Know You Better
           </p>
           <h1 className="font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
             Private. Scientific. Judgment-Free Male Sexual Health Guidance.
@@ -82,6 +85,41 @@ export default function Home() {
                 title: "Health Quiz & Plan",
                 desc: "Logic-based intake and a structured improvement plan based on your answers.",
                 href: "/how-it-works",
+              },
+              {
+                title: "Sexual Performance Guidance",
+                desc: "Evidence-based support for performance concerns. Clarity on factors and actionable steps.",
+                href: "/services#performance",
+              },
+              {
+                title: "Premature Ejaculation Counselling",
+                desc: "Specialist support with exercises or protocols. Structured improvement and reduced anxiety.",
+                href: "/services#pe",
+              },
+              {
+                title: "Erectile Health Education",
+                desc: "Understanding function, lifestyle factors, and when to consider tests or treatment.",
+                href: "/services#erectile",
+              },
+              {
+                title: "Libido & Mental Factors",
+                desc: "Exploring drive, stress, and relationship dynamics. Possible hormone testing.",
+                href: "/services#libido",
+              },
+              {
+                title: "Relationship Performance Anxiety",
+                desc: "Confidential space to discuss anxiety and evidence-based strategies.",
+                href: "/services#anxiety",
+              },
+              {
+                title: "Lifestyle Optimization",
+                desc: "Sleep, stress, fitness, and nutrition in the context of sexual health.",
+                href: "/services#lifestyle",
+              },
+              {
+                title: "Sexual Testing Guidance",
+                desc: "When and how to use at-home or lab tests. Expert interpretation and next steps.",
+                href: "/services#testing",
               },
             ].map((item) => (
               <Link

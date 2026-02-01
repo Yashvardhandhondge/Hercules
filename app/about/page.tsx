@@ -11,6 +11,9 @@ export default function AboutPage() {
       <h1 className="font-display text-3xl font-bold text-[var(--kyb-navy)] sm:text-4xl">
         About KYB Hercules
       </h1>
+      <p className="mt-2 text-[var(--kyb-text-muted)]">
+        KYB — Know You Better. India&apos;s first structured male sexual health guidance platform.
+      </p>
 
       <div className="mt-10 space-y-10 text-[var(--kyb-charcoal)]">
         <section>
