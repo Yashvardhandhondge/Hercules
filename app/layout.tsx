@@ -1,26 +1,27 @@
 import type { Metadata } from "next";
-import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
+import { Geist, Newsreader } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PanicButton } from "@/components/PanicButton";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
   title: "KYB Hercules | Private. Scientific. Male Sexual Health Guidance",
   description:
-    "India's first structured male sexual health guidance platform. Confidential, evidence-backed support. At-home kits, tele-consultations, and science-backed solutions.",
+    "India's first structured male sexual health guidance platform. Confidential, evidence-backed support.",
   keywords: ["male sexual health", "confidential", "teleconsultation", "India", "KYB Hercules"],
   openGraph: {
     title: "KYB Hercules | Private. Scientific. Judgment-Free.",
@@ -34,12 +35,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${plusJakarta.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased bg-[var(--kyb-cream)] text-[var(--kyb-text)]">
+    <html lang="en" className={`${geistSans.variable} ${newsreader.variable}`}>
+      <body>
+        <div className="ed-grain" aria-hidden="true" />
         <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
         <PanicButton />
+        {children}
+        <Footer />
       </body>
     </html>
   );

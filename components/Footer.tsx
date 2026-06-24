@@ -2,6 +2,7 @@ import Link from "next/link";
 
 const footerLinks = {
   platform: [
+    { href: "/ed", label: "Erectile Health" },
     { href: "/services", label: "Services" },
     { href: "/how-it-works", label: "How It Works" },
     { href: "/kits", label: "At-Home Kits" },
@@ -12,58 +13,89 @@ const footerLinks = {
     { href: "/blog", label: "Education & Blog" },
     { href: "/privacy", label: "Privacy & Confidentiality" },
   ],
-  legal: [
-    { href: "/privacy#terms", label: "Terms & Conditions" },
-    { href: "/privacy#refund", label: "Refund Policy" },
-    { href: "/privacy#disclaimer", label: "Disclaimer" },
-  ],
 };
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--kyb-border)] bg-[var(--kyb-navy)] text-white">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    <footer
+      style={{
+        position: "relative",
+        zIndex: 2,
+        background: "#06090f",
+        color: "#8e99ad",
+        padding: "clamp(48px,6vw,72px) clamp(20px,5vw,40px)",
+        borderTop: "1px solid rgba(231,192,126,0.1)",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "1220px",
+          margin: "0 auto",
+        }}
+      >
+        <div
+          style={{
+            display: "grid",
+            gap: "40px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          }}
+        >
+          {/* Brand */}
           <div>
-            <p className="font-display text-lg font-bold">
-              KYB <span className="text-[var(--kyb-bronze-light)]">Hercules</span>
+            <div
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontWeight: 500,
+                fontSize: "21px",
+                color: "#f7f3ea",
+              }}
+            >
+              KYB{" "}
+              <span
+                style={{
+                  fontStyle: "italic",
+                  background: "linear-gradient(120deg,#e3c07e,#b5832f)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
+                Hercules
+              </span>
+            </div>
+            <p style={{ margin: "6px 0 0", fontSize: "11.5px", color: "#6b7689" }}>
+              Know You Better
             </p>
-            <p className="mt-1 text-xs text-slate-400">Know You Better</p>
-            <p className="mt-2 text-sm text-slate-300">
-              Private. Scientific. Judgment-free male sexual health guidance.
+            <p style={{ margin: "12px 0 0", fontSize: "13px", maxWidth: "320px", lineHeight: 1.62 }}>
+              Private, scientific, judgment-free male sexual health guidance. For men 18+.
             </p>
-            <p className="mt-2 text-xs text-slate-400">18+ only. Not a replacement for emergency care.</p>
           </div>
+
+          {/* Platform links */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-300">Platform</h3>
-            <ul className="mt-3 space-y-2">
+            <h3 style={{ margin: 0, fontSize: "11.5px", fontWeight: 600, letterSpacing: ".14em", textTransform: "uppercase", color: "#aab6c8" }}>
+              Platform
+            </h3>
+            <ul style={{ listStyle: "none", padding: 0, margin: "14px 0 0" }}>
               {footerLinks.platform.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-300 hover:text-white">
+                <li key={link.href} style={{ marginTop: "10px" }}>
+                  <Link href={link.href} style={{ fontSize: "14px", color: "#8e99ad", transition: "color .2s" }}>
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
+
+          {/* Learn links */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-300">Learn</h3>
-            <ul className="mt-3 space-y-2">
+            <h3 style={{ margin: 0, fontSize: "11.5px", fontWeight: 600, letterSpacing: ".14em", textTransform: "uppercase", color: "#aab6c8" }}>
+              Learn
+            </h3>
+            <ul style={{ listStyle: "none", padding: 0, margin: "14px 0 0" }}>
               {footerLinks.learn.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-300 hover:text-white">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-300">Legal</h3>
-            <ul className="mt-3 space-y-2">
-              {footerLinks.legal.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-slate-300 hover:text-white">
+                <li key={link.href} style={{ marginTop: "10px" }}>
+                  <Link href={link.href} style={{ fontSize: "14px", color: "#8e99ad", transition: "color .2s" }}>
                     {link.label}
                   </Link>
                 </li>
@@ -71,8 +103,25 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="mt-10 border-t border-slate-700 pt-8 text-center text-sm text-slate-400">
-          <p>© {new Date().getFullYear()} KYB Hercules. Confidential. Evidence-backed.</p>
+
+        {/* Bottom */}
+        <div
+          style={{
+            marginTop: "40px",
+            paddingTop: "24px",
+            borderTop: "1px solid rgba(231,192,126,0.08)",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+            gap: "12px",
+          }}
+        >
+          <p style={{ margin: 0, fontSize: "12px", color: "#566073" }}>
+            &copy; KYB Hercules. Confidential. Evidence-backed.
+          </p>
+          <p style={{ margin: 0, fontSize: "12px", color: "#566073", maxWidth: "400px" }}>
+            General information only &mdash; not a substitute for professional or emergency medical care. 18+ only.
+          </p>
         </div>
       </div>
     </footer>

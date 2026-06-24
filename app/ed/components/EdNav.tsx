@@ -5,23 +5,14 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { id: "home", label: "Home", href: "/" },
   { id: "ed", label: "Erectile Health", href: "/ed" },
-  { id: "services", label: "Services", href: "/services" },
+  { id: "svc", label: "Services", href: "/services" },
   { id: "how", label: "How It Works", href: "/how-it-works" },
   { id: "kits", label: "At-Home Kits", href: "/kits" },
 ];
 
-export function Header() {
+export function EdNav() {
   const pathname = usePathname();
-
-  function getActiveId() {
-    if (pathname?.startsWith("/ed")) return "ed";
-    if (pathname?.startsWith("/services")) return "services";
-    if (pathname?.startsWith("/how-it-works")) return "how";
-    if (pathname?.startsWith("/kits")) return "kits";
-    if (pathname === "/") return "home";
-    return "";
-  }
-  const activeId = getActiveId();
+  const activeId = pathname?.startsWith("/ed") ? "ed" : "home";
 
   return (
     <header
@@ -46,7 +37,6 @@ export function Header() {
           paddingRight: "clamp(140px,16vw,176px)",
         }}
       >
-        {/* Logo */}
         <Link
           href="/"
           style={{
@@ -55,11 +45,12 @@ export function Header() {
             alignItems: "center",
             gap: "11px",
             padding: 0,
-            fontFamily: "var(--font-serif)",
+            fontFamily: "var(--font-ed-serif)",
             fontSize: "23px",
             fontWeight: 500,
             letterSpacing: "-0.01em",
             color: "#f5f1e8",
+            textDecoration: "none",
           }}
         >
           <span
@@ -73,7 +64,7 @@ export function Header() {
               borderRadius: "9px",
               background: "linear-gradient(135deg,#e3c07e,#b5832f 55%,#8a6420)",
               color: "#231708",
-              fontFamily: "var(--font-serif)",
+              fontFamily: "var(--font-ed-serif)",
               fontSize: "18px",
               fontWeight: 600,
               boxShadow: "inset 0 1px 0 rgba(255,255,255,0.45),0 4px 12px rgba(138,100,32,0.4)",
@@ -95,7 +86,6 @@ export function Header() {
           </span>
         </Link>
 
-        {/* Nav */}
         <nav
           className="nav-scroll"
           aria-label="Main"
@@ -126,6 +116,7 @@ export function Header() {
                   transition: "color .2s, background .2s",
                   fontWeight: active ? 600 : 500,
                   color: active ? "#f5f1e8" : "#9aa6ba",
+                  textDecoration: "none",
                 }}
               >
                 {item.label}
@@ -134,7 +125,6 @@ export function Header() {
           })}
         </nav>
 
-        {/* CTA */}
         <Link
           href="/ed/assessment"
           style={{
@@ -152,6 +142,7 @@ export function Header() {
             boxShadow: "inset 0 1px 0 rgba(255,255,255,0.3),0 6px 18px rgba(149,110,38,0.35)",
             transition: "transform .25s,box-shadow .25s",
             whiteSpace: "nowrap",
+            textDecoration: "none",
           }}
         >
           Assessment

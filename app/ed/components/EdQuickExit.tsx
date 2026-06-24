@@ -1,6 +1,6 @@
 "use client";
 
-export function PanicButton() {
+export function EdQuickExit() {
   const handleExit = () => {
     try {
       window.location.replace("https://www.google.com");
@@ -35,7 +35,7 @@ export function PanicButton() {
         WebkitBackdropFilter: "blur(10px)",
         boxShadow: "0 10px 30px rgba(5,8,14,0.4)",
         transition: "background .2s,transform .2s,border-color .2s",
-        fontFamily: "var(--font-sans)",
+        fontFamily: "var(--font-ed-sans)",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.background = "rgba(10,15,26,0.95)";
